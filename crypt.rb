@@ -1,5 +1,10 @@
 class String
     def Encrypt
+        self.split("").collect{ |c|
+            if(c == /^[a-z]$/)
+                ((((c.ord-6)-'a'.ord)%26)+'a'.ord).chr
+            end
+        }
         lower = self.tr("a-z", "u-za-t")
         return lower.tr("A-Z", "U-ZA-T")
     end
