@@ -1,11 +1,11 @@
-class Crypt
-    def Encrypt(str)
-        lower = str.tr("a-z", "u-za-t")
+class String
+    def Encrypt
+        lower = self.tr("a-z", "u-za-t")
         return lower.tr("A-Z", "U-ZA-T")
     end
 
-    def Decrypt(str)
-        lower = str.tr("a-z", "g-za-f")
+    def Decrypt
+        lower = self.tr("a-z", "g-za-f")
         return lower.tr("A-Z", "G-ZA-F")
     end
 end
@@ -17,13 +17,9 @@ end
 ArgString = ARGV.join(" ")
 puts ArgString
 
-ArgString.split(//)
-puts ArgString[2]
 
-TestObj = Crypt.new
-
-Encrypted = TestObj.Encrypt(ArgString)
-Decrypted = TestObj.Decrypt(Encrypted)
+Encrypted = ArgString.Encrypt
+Decrypted = ArgString.Decrypt
 
 puts Encrypted
 puts Decrypted
