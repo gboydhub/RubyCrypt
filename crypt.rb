@@ -21,8 +21,6 @@ class String
                 c
             end
         }.join("")
-        lower = self.tr("a-z", "g-za-f")
-        return lower.tr("A-Z", "G-ZA-F")
     end
 end
 
