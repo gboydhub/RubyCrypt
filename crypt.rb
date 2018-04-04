@@ -17,6 +17,9 @@ end
 ArgString = ARGV.join(" ")
 puts ArgString
 
+ArgString.split(//)
+puts ArgString[2]
+
 TestObj = Crypt.new
 
 Encrypted = TestObj.Encrypt(ArgString)
