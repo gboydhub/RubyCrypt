@@ -10,6 +10,12 @@ class Crypt
     end
 end
 
+if(ARGV.length <= 0)
+    abort("Need a string!")
+end
+
+puts ARGV
+
 TestObj = Crypt.new
 TestString = "Be sure to drink your Ovaltine"
 
