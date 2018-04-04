@@ -14,7 +14,8 @@ if(ARGV.length <= 0)
     abort("Need a string!")
 end
 
-puts ARGV
+ArgString = ARGV.join(" ")
+puts ArgString
 
 TestObj = Crypt.new
 TestString = "Be sure to drink your Ovaltine"
