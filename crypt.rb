@@ -18,9 +18,8 @@ ArgString = ARGV.join(" ")
 puts ArgString
 
 TestObj = Crypt.new
-TestString = "Be sure to drink your Ovaltine"
 
-Encrypted = TestObj.Encrypt(TestString)
+Encrypted = TestObj.Encrypt(ArgString)
 Decrypted = TestObj.Decrypt(Encrypted)
 
 puts Encrypted
