@@ -1,12 +1,14 @@
 class String
     def Encrypt
-        self.split("").collect{ |c|
-            if(c == /^[a-z]$/)
-                ((((c.ord-6)-'a'.ord)%26)+'a'.ord).chr
+        return self.split("").collect{ |c|
+            if(("a".."z").cover?(c))
+                (((c.ord+20-'a'.ord)%26)+'a'.ord).chr
+            elseif(c === /^[A-Z]$/)
+                (((c.ord+20-'A'.ord)%26)+'A'.ord).chr
+            else
+                c
             end
-        }
-        lower = self.tr("a-z", "u-za-t")
-        return lower.tr("A-Z", "U-ZA-T")
+        }.join("")
     end
 
     def Decrypt
@@ -22,9 +24,8 @@ end
 ArgString = ARGV.join(" ")
 puts ArgString
 
-
 Encrypted = ArgString.Encrypt
-Decrypted = ArgString.Decrypt
+Decrypted = Encrypted.Decrypt
 
 puts Encrypted
 puts Decrypted
